@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="images/png" href="/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Skill Devlopment | Goodwill Rehabilitation</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400">   <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="/css/magnific-popup.css">                                     <!-- Magnific pop up style -->
+    <link rel="stylesheet" href="/css/style.css">                                              <!-- style -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <style type="text/css">
+        .auto-style1 {
+            border: 1px solid #999;
+            height: 71%;
+            text-align: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .auto-style3 {
+            color: #666;
+            display: block;
+            padding: 10px;
+            width: 100%;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            height: 60px;
+        }
+
+        .auto-style4 {
+            height: 231px;
+            margin-top: 135px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="tm-section-title"><b>Skill Development</b></h1><br>
+        <section>
+            <div class="tm-content-box">
+                <img src="/img/banner_skilldevelopment.jpg" alt="Skill Development image" class="img-fluid">
+            </div>
+            
+             <h2 class="tm-section-title">After-Care Capacity Development Programme</h2><br>
+            <p class="tm-section-description">One of the reasons for the relapse is a sense of having no purpose or productivity; many of our patients have inherent above average capacity to function. Sadly an addict ir an alcoholic fails to work on his skills. In our capacity building programme, we focus on giving them baic life skills exposure. We have automibile driving lessons, basic knowledge of computer classes, carpentry and masonry skills. For those who wish to pursue their education, we make provisions to encourage them.</p>
+        </section>
+        <div class="tm-content-box">
+                <img src="/img/sd1.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd2.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd3.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd4.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd5.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd6.jpg" alt="About us image" class="img-fluid">
+            </div>
+            <div class="tm-content-box">
+                <img src="/img/sd7.jpg" alt="About us image" class="img-fluid">
+            </div>
+        <footer class="tm-footer">
+            <p class="text-xs-center"><br><br><br>Copyright &copy; 2020 Goodwill Society | AnxSion Insignt Studio</p>
+        </footer>
+    </div>
+
+    <!-- load JS files -->
+
+    <script src="/js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="/js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/getting-started/download/) -->
+    <script src="/js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <script src="/js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="/js/jquery.touchSwipe.min.js"></script>         <!-- https://github.com/mattbryson/TouchSwipe-Jquery-Plugin -->
+    <!-- Templatemo scripts -->
+    <script>
+
+
+        $(document).ready(function(){
+
+            // Single page nav
+            if($(window).width() <= 1139) {
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass' : "active",
+                    offset : 100
+                });
+            } else {
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass' : "active",
+                    offset : 80
+                });
+            }
+
+            // Handle nav offset upon window resize
+            $(window).resize(function(){
+                if($(window).width() <= 1139) {
+                    $('.tm-main-nav').singlePageNav({
+                        'currentClass' : "active",
+                        offset : 100
+                    });
+                } else {
+                    $('.tm-main-nav').singlePageNav({
+                        'currentClass' : "active",
+                        offset : 80
+                    });
+                }
+            });
+
+            // Magnific pop up
+            $('.gallery-container').magnificPopup({
+              delegate: 'a', // child items selector, by clicking on it popup will open
+              type: 'image',
+              gallery: {enabled:true}
+              // other options
+            });
+
+            $('.carousel').carousel({
+              interval: 3000
+            })
+
+    </script>
+</body>
+
+</html>
