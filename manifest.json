@@ -10,7 +10,7 @@
     "background_color": "pick",
     "icons": [
     {
-      "src": "/img/PWAicon.png",
+      "src": "/img/PWAIcon.png",
       "type": "image/png",
       "sizes": "512x512"
       }
