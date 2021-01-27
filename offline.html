@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="images/png" href="../favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Offline | Goodwill Rehabilitation</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400">   <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">                                     <!-- Magnific pop up style -->
+    <link rel="stylesheet" href="../css/style.css">                                              <!-- style -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="tm-section-title" align="Center"><b>OFFLINE</b></h1><br>
+        <section>
+            <p class="tm-section-description">Connection is lost</p>
+           </section>
+        <footer class="tm-footer">
+            <p class="text-xs-center"><br><br><br>&copy; Goodwill Society<br><br>Made by AnxSion</p>
+        </footer>
+    </div>
+
+
+    <!-- load JS files -->
+
+    <script src="../js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="../js/bootstrap.min.js"></script>                 <!-- Bootstrap (http://v4-alpha.getbootstrap.com/getting-started/download/) -->
+    <script src="../js/jquery.magnific-popup.min.js"></script>     <!-- Magnific pop-up (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <script src="../js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="../js/jquery.touchSwipe.min.js"></script>         <!-- https://github.com/mattbryson/TouchSwipe-Jquery-Plugin -->
+    <!-- Templatemo scripts -->
+    <script>
+
+
+        $(document).ready(function () {
+
+            // Single page nav
+            if ($(window).width() <= 1139) {
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass': "active",
+                    offset: 100
+                });
+            } else {
+                $('.tm-main-nav').singlePageNav({
+                    'currentClass': "active",
+                    offset: 80
+                });
+            }
+
+            // Handle nav offset upon window resize
+            $(window).resize(function () {
+                if ($(window).width() <= 1139) {
+                    $('.tm-main-nav').singlePageNav({
+                        'currentClass': "active",
+                        offset: 100
+                    });
+                } else {
+                    $('.tm-main-nav').singlePageNav({
+                        'currentClass': "active",
+                        offset: 80
+                    });
+                }
+            });
+
+            // Magnific pop up
+            $('.gallery-container').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: { enabled: true }
+                // other options
+            });
+
+            $('.carousel').carousel({
+                interval: 3000
+            })
+
+    </script>
+</body>
+
+</html>
