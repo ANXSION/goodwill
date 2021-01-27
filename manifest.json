@@ -7,7 +7,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "lang": "English",
-    "background_color": "white",
+    "background_color": "#FFFFFF",
     "icons": [
     {
       "src": "/img/PWAIcon.png",
