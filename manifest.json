@@ -3,7 +3,7 @@
     "short_name": "Goodwill Rehabilitation",
     "description": "The official PWA of the Goodwill Rehabilitation.",
     "theme_color": "#FFFFFF",
-    "start_url": "https://goodwillrehabilitation.com",
+    "start_url": "/index.html",
     "scope": "/",
     "display": "standalone",
     "orientation": "portrait",
