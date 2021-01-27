@@ -1,0 +1,17 @@
+{
+    "name": "Goodwill Rehabilitation",
+    "short_name": "Goodwill Rehabilitation",
+    "description": "The official PWA of the Goodwill Rehabilitation.",
+    "start_url": "goodwillrehabilitation.com",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "lang": "English",
+    "background_color": "pick",
+    "icons": [
+    {
+      "src": "/img/PWAicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+      }
+}
