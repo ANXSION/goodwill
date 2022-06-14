@@ -12,7 +12,6 @@
 	<meta name="msapplication-navbutton-color" content="white">
 	<meta name="apple-mobile-web-app-status-bar-style" content="white">
     <link rel="icon" href="asset/image/favicon.png" type="image/x-icon">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +29,7 @@
 
 	<br>
 
-	<a class="contact" href="tel:8670699934">Contact us</a>
+	<a id="contact" class="contact" href="tel:8670699934">Contact us</a>
 
 	<div class="main-content">
 		<div id="homedivision" class="home">
@@ -39,7 +38,7 @@
 				<div>
 					<h1>About Us</h1>
 					<p>Goodwill Rehabilitation Centre (GRC) was established in the year 2008 and is located at Salbari Siliguri.</p>
-					<a onclick="navigationclick('aboutus')">Learn more about us</a>
+					<p onclick="navigationclick('aboutus')"><span>Learn more about us</span></p>
 				</div>
 				<div>
 					<img src="asset/image/aboutus.webp" alt="">
@@ -50,7 +49,7 @@
 				<div>
 					<h1>Our Vision</h1>
 					<p>To Bring healing and restoration to those persons and their families who have been affected by Drug Addiction and Alcoholism and spread the message of hope, recovery and goodwill in our community.</p>
-					<a onclick="navigationclick('vision')">This is our vision</a>
+					<p onclick="navigationclick('vision')"><span>This is our vision</span></p>
 				</div>
 				<div>
 					<img src="asset/image/ourvision.webp" alt="">
@@ -61,7 +60,7 @@
 				<div>
 					<h1>Treatment Structure</h1>
 					<p>Our own experience tells that Drug Addiction and (United Nations ICD F:19 American Medical Association) is a complex issue and affects us in all areas of our lives. </p>
-					<a href="">Check how we treat addiction</a>
+					<p onclick="navigationclick('treatment')"><span>How we treat addiction.</span></p>
 				</div>
 				<div>
 					<img src="asset/image/treatment.webp" alt="">
@@ -72,7 +71,7 @@
 				<div>
 					<h1>Activities</h1>
 					<p>Through such experiences in dealing with scores of affected persons, whe have learnt that Sports, Art, Music, Gardening and other Outdoor activities can be helpful in achieving soundness of mind, body and spirit, resulting in wholesome recovery.</p>
-					<a href="">Check out the activities</a>
+					<p onclick="navigationclick('activities')"><span>Check out the activities</span></p>
 				</div>
 				<div>
 					<img src="asset/image/activities.webp" alt="">
@@ -83,7 +82,7 @@
 				<div>
 					<h1>Sustainable Skill</h1>
 					<p>One of the reasons for the relapse is a sense of having no purpose or productivity</p>
-					<a href="">Learn how we help teach sustainable skills</a>
+					<p onclick="navigationclick('skill')"><span>Learn how we help teach sustainable skills</span></p>
 				</div>
 				<div>
 					<img src="asset/image/skill.webp" alt="">
@@ -94,7 +93,7 @@
 				<div>
 					<h1>For Family</h1>
 					<p>We know from our life experiences the family members of Drug Addict or an Alcoholic also suffers and goes through so much of pain</p>
-					<a href="">Learn how we provide support their families</a>
+					<p onclick="navigationclick('family')"><span>Learn how we provide support their families</span></p>
 				</div>
 				<div>
 					<img src="asset/image/family.webp" alt="">
@@ -105,7 +104,7 @@
 				<div>
 					<h1>Our Routine</h1>
 					<p>We are a Non-Profit Organization and we stand by it, and because we understand the pain and hardship already faced by the family, we have kept our fee structure to a bare minimum.</p>
-					<a href="">Learn about our daily routine</a>
+					<p onclick="navigationclick('routine')"><span>Learn about our daily routine</span></p>
 				</div>
 				<div>
 					<img src="asset/image/routine.webp" alt="">
@@ -116,7 +115,7 @@
 				<div>
 					<h1>Online Test</h1>
 					<p>Take our free online test to asses your situationa dn get an idea if you are on a risk to develop any degree of addiction or not.</p>
-					<a href="">Take the Test.</a>
+					<p onclick="navigationclick('check')"><span>Take the Test.</span></p>
 				</div>
 				<div>
 					<img src="asset/image/check.webp" alt="">
@@ -395,10 +394,7 @@
 						<td>(Retire to bed)<br>(Strict silence maintained)</td>
 						<td>9:30pm</td>
 					</tr>
-				</tbody>
-
-
-				
+				</tbody>	
 			</table>
 
 		</div>
@@ -441,6 +437,8 @@
 		
 
 		function navigationclick(navigationVar){
+			document.documentElement.scrollTop = 0;
+
 			document.getElementById("home").style.borderColor="rgba(0,0,0,0)";
 			document.getElementById("home").style.color="rgb(127,127,127)";
 			document.getElementById("aboutus").style.borderColor="rgba(0,0,0,0)";
@@ -467,48 +465,67 @@
 			document.getElementById("familydivision").style.display="none";
 			document.getElementById("routinedivision").style.display="none";
 
+
 			if (navigationVar=="home"){
+				document.getElementById("contact").style.display="block";
+				setTimeout(function(){ document.getElementById("contact").style.opacity="100%"; }, 500);
 				document.getElementById("home").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("home").style.color="rgb(0,0,0)";
 				document.getElementById("homedivision").style.display="block";
 				
 			}
 			else if (navigationVar=="aboutus"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("aboutus").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("aboutus").style.color="rgb(0,0,0)";
 				document.getElementById("aboutusdivision").style.display="block";
 			}
 			else if (navigationVar=="vision"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("vision").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("vision").style.color="rgb(0,0,0)";
 				document.getElementById("visiondivision").style.display="block";
 			}
 			else if (navigationVar=="treatment"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("treatment").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("treatment").style.color="rgb(0,0,0)";
 				document.getElementById("treatmentdivision").style.display="block";
 			}
 			else if (navigationVar=="activities"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("activities").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("activities").style.color="rgb(0,0,0)";
 				document.getElementById("activitiesdivision").style.display="block";
 			}
 			else if (navigationVar=="skill"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("skill").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("skill").style.color="rgb(0,0,0)";
 				document.getElementById("skilldivision").style.display="block";
 			}
 			else if (navigationVar=="family"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("family").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("family").style.color="rgb(0,0,0)";
 				document.getElementById("familydivision").style.display="block";
 			}
 			else if (navigationVar=="routine"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("routine").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("routine").style.color="rgb(0,0,0)";
 				document.getElementById("routinedivision").style.display="block";
 			}
 			else if (navigationVar=="check"){
+				document.getElementById("contact").style.opacity="0%";
+				setTimeout(function(){ document.getElementById("contact").style.display="none"; }, 500);
 				document.getElementById("check").style.borderColor="rgba(0,0,0,1)";
 				document.getElementById("check").style.color="rgb(0,0,0)";
 				document.getElementById("aboutusdivision").style.display="block";
@@ -516,7 +533,6 @@
 			else{
 				console.log("Unauthorised Debugging Detected");
 			}
-			
 		}
 
 	</script>

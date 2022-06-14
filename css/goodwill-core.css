@@ -6,12 +6,14 @@
 }
 
 html{
-    font-size: 62.5%;
+    font-size: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 body{
     width: 100%;
     height: 100%;
     min-height: 100%;
+    min-width: 320px;
     padding: 0;
     margin: 0;
     margin-top: 80px;
@@ -32,7 +34,7 @@ body{
     right:-10px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     border-radius: 10px 10px 0 10px;
     text-align: center;
     transition: all 0.3s ease;
@@ -59,7 +61,7 @@ nav p{
     border-style: solid;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 1);
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     justify-content: center;
     vertical-align: middle;
     transition: border-color 0.3s ease;
@@ -80,33 +82,38 @@ nav p{
 }
 .home img{
     width: 100%;
-    height: 200px;
+    height: 150px;
     image-resolution:300 dpi;
     object-fit: cover;
 }
+.home h1{
+    font-weight: normal;
+}
 .home p{
     text-align: justify;
-    font-size: 1.4rem;
+    font-size: 0.875rem;
 }
 .home li{
-    font-size: 1.4rem;
+    font-size: 0.75rem;
 }
 .home table{
     width: 100%;
+    padding: 0;
+    margin: auto;
 }
 .home table,tbody td{
     border: 0.5px solid black;
     border-collapse: collapse;
 }
 .home thead tr th{
-    padding-top: 7px;
-    padding-bottom: 7px;
-    font-size: 1.6rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.75rem;
 }
 .home tbody tr td{
-    padding-top: 7px;
-    padding-bottom: 7px;
-    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.75rem;
     padding: 5px;
 }
 .card{
@@ -123,25 +130,25 @@ nav p{
     display: block;
     margin: 7px;
 }
-
 .home div div h1{
     padding: 0;
     margin: 0;
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 .home div div p{
-    font-size: 1rem;
+    font-size: 0.75rem;
     text-align: justify;
 }
-.home div div a{
+.home div div p span{
     text-decoration: none;
     color:dodgerblue;
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 .home div div img{
     margin: auto;
     width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 .contact{
@@ -153,13 +160,17 @@ nav p{
     align-items: center;
     z-index: 2;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 0.875rem;
     background-color: var(--Container);
     color: var(--OnContainer);
     padding: 10px;
     border-radius: 10px;
     line-height: 32px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    transition: all 0.3s ease;
+}
+.contact:hover{
+    background-color: #d5b89c;
 }
 footer{
     padding: 5px;
@@ -170,5 +181,5 @@ footer{
     align-items: center;
 }
 footer p{
-    font-size: 1.2rem;
+    font-size: 0.75rem;
 }
