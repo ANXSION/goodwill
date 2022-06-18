@@ -1,8 +1,7 @@
 :root{
-    --Primary:#1e90ff;
-    --OnPrimary: #001c3b;
-    --Container:#ffdcbc;
-    --OnContainer:#2d1600;
+    --Primary:#00b6ff;
+    --OnPrimary: #7fdaff ;
+    --OnContainer:#005b7f ;
 }
 
 html{
@@ -16,12 +15,21 @@ body{
     min-width: 320px;
     padding: 0;
     margin: 0;
-    margin-top: 80px;
+    margin-top: 92px;
     margin-left: auto;
     margin-right: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: all 0.3s ease;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 .notification{
     opacity: 0%;
     color: var(--OnContainer);
@@ -45,7 +53,7 @@ nav{
     background-color: white;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    height: 72px;
+    height: 92px;
     position: fixed;
     top: 0;
     text-align: center;
@@ -59,15 +67,18 @@ nav p{
     margin: 5px;
     padding: 5px;
     border-style: solid;
-    border-width: 1px;
+    border-radius: 5px;
+    border-width: 2px;
     border-color: rgba(0, 0, 0, 1);
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     justify-content: center;
     vertical-align: middle;
     transition: border-color 0.3s ease;
+    cursor: pointer;
+    
 }
 .main-content{
-    width: 80%;
+    width: 70%;
     height: 100%;
     min-height: 100%;
     padding: 0;
@@ -75,42 +86,64 @@ nav p{
     margin-left: auto;
     margin-right: auto;
 }
-.home{
+.home, .details{
     display: block;
     width: 100%;
     transition: all 0.3s ease;
 }
-.home img{
+.details img{
     width: 100%;
     height: 150px;
     image-resolution:300 dpi;
     object-fit: cover;
 }
-.home h1{
+.details h1{
     font-weight: normal;
+    font-size: 1.5rem;
+    vertical-align:middle;
+    text-align: center;
+    background:linear-gradient(to right,#005b7f, #7fdaff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.home p{
-    text-align: justify;
+
+.details a span{
+    font-size: 1.5rem;
+    vertical-align:middle;
+}
+.details a{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.details p{
     font-size: 0.875rem;
+    text-align: justify;
+    
 }
-.home li{
+.details li{
     font-size: 0.75rem;
 }
-.home table{
+
+.details table{
     width: 100%;
     padding: 0;
     margin: auto;
+    table-layout: fixed;
 }
-.home table,tbody td{
+.details table,tbody td{
     border: 0.5px solid black;
     border-collapse: collapse;
 }
-.home thead tr th{
+.details thead tr th{
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 0.75rem;
 }
-.home tbody tr td{
+.details tbody tr td{
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 0.75rem;
@@ -118,11 +151,19 @@ nav p{
 }
 .card{
     width: 100%;
-    min-height:128px;
     display: flex;
     border-radius: 5px;
     margin-bottom: 30px;
     position: relative;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: all 0.7s ease;
+}
+.card:hover{
+    box-shadow: #7fdaff 0px 3px 18px;
+}
+.home div {
+    padding: 5px;
 }
 
 .home div div{
@@ -131,19 +172,22 @@ nav p{
     margin: 7px;
 }
 .home div div h1{
-    padding: 0;
     margin: 0;
     font-size: 1.5rem;
     font-weight: normal;
+    background: linear-gradient(to right,#005b7f, #7fdaff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .home div div p{
     font-size: 0.75rem;
-    text-align: justify;
 }
 .home div div p span{
     text-decoration: none;
-    color:dodgerblue;
+    color:#005b7f;
     font-size: 0.75rem;
+    cursor: pointer;
 }
 .home div div img{
     margin: auto;
@@ -152,6 +196,7 @@ nav p{
     border-radius: 5px;
 }
 .contact{
+    width: 6rem;
     position: fixed;
     bottom: 8%;
     right: 5%;
@@ -161,8 +206,8 @@ nav p{
     z-index: 2;
     text-decoration: none;
     font-size: 0.875rem;
-    background-color: var(--Container);
-    color: var(--OnContainer);
+    background-color: #005b7f;
+    color: #7fdaff;
     padding: 10px;
     border-radius: 10px;
     line-height: 32px;
@@ -170,16 +215,332 @@ nav p{
     transition: all 0.3s ease;
 }
 .contact:hover{
-    background-color: #d5b89c;
+    background-color:#7fdaff;
+    color:#005b7f;
 }
 footer{
     padding: 5px;
     text-align: center;
-    background-color: white;
     vertical-align: middle;
     justify-content: center;
     align-items: center;
 }
 footer p{
     font-size: 0.75rem;
+}
+
+
+@media screen and (min-width:320px) {
+    .main-content{
+        width: 85%;
+    }
+    nav p{
+        font-size: 0.75rem;
+    }
+    .card{
+        height: 220px;
+    }
+    .home div div h1{
+        font-size: 1.25rem;
+    }
+    .home div div p{
+        font-size: 0.675rem;
+    }
+    .home div div p span{
+        font-size: 0.675rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 1.5rem;
+    }
+    .details p{
+        font-size: 0.75rem;
+    }
+    .details li{
+        font-size: 0.75rem;
+    }
+    .details a{
+        font-size: 0.75rem;
+    }
+    .details a span{
+        font-size: 0.75rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    } 
+}
+@media screen and (min-width:375px) {
+    .main-content{
+        width: 70%;
+    }
+    nav p{
+        font-size: 0.75rem;
+    }
+    .home div div h1{
+        font-size: 1.125rem;
+    }
+    .home div div p{
+        font-size: 0.675rem;
+    }
+    .home div div p span{
+        font-size: 0.675rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 1.5rem;
+    }
+    .details p{
+        font-size: 0.75rem;
+    }
+    .details li{
+        font-size: 0.75rem;
+    }
+    .details a{
+        font-size: 0.75rem;
+    }
+    .details a span{
+        font-size: 0.75rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    } 
+}
+
+@media screen and (min-width:425px) {
+    .main-content{
+        width: 70%;
+    }
+    nav p{
+        font-size: 0.75rem;
+    }
+    .card{
+        height: auto;
+    }
+    .home div div h1{
+        font-size: 1.5rem;
+    }
+    .home div div p{
+        font-size: 0.75rem; 
+    }
+    .home div div p span{
+        font-size: 0.75rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 1.5rem;
+    }
+    .details p{
+        font-size: 0.75rem;
+    }
+    .details li{
+        font-size: 0.75rem;
+    }
+    .details a{
+        font-size: 0.75rem;
+    }
+    .details a span{
+        font-size: 0.75rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    }
+    
+}
+
+@media screen and (min-width:768px) {
+    .main-content{
+        width: 60%;
+    }
+    nav p{
+        font-size: 1rem;
+    }
+    .card{
+        height: auto;
+    }
+    .home div div h1{
+        font-size: 2rem;
+    }
+    .home div div p{
+        font-size: 1rem; 
+    }
+    .home div div p span{
+        font-size: 1rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 3rem;
+    }
+    .details p{
+        font-size: 1rem;
+    }
+    .details li{
+        font-size: 1rem;
+    }
+    .details a{
+        font-size: 1rem;
+    }
+    .details a span{
+        font-size: 1rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+    .main-content{
+        width: 512px;
+    }
+    nav p{
+        font-size: 1rem;
+    }
+    .card{
+        height: auto;
+    }
+    .home div div h1{
+        font-size: 2rem;
+    }
+    .home div div p{
+        font-size: 1rem; 
+    }
+    .home div div p span{
+        font-size: 1rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 2rem;
+    }
+    .details p{
+        font-size: 1rem;
+    }
+    .details li{
+        font-size: 1rem;
+    }
+    .details a{
+        font-size: 1rem;
+    }
+    .details a span{
+        font-size: 1rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    }
+    
+}
+
+@media screen and (min-width:1440px) {
+    .main-content{
+        width: 720px;
+    }
+    nav p{
+        font-size: 1rem;
+    }
+    .card{
+        height: auto;
+    }
+    .home div div h1{
+        font-size: 3rem;
+    }
+    .home div div p{
+        font-size: 1.25rem; 
+    }
+    .home div div p span{
+        font-size: 1rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 3rem;
+    }
+    .details p{
+        font-size: 1.25rem;
+    }
+    .details li{
+        font-size: 1.25rem;
+    }
+    .details a{
+        font-size: 1.25rem;
+    }
+    .details a span{
+        font-size: 1.25rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    }
+    
+}
+@media screen and (min-width:2560px) {
+    .main-content{
+        width: 1280px;
+    }
+    nav p{
+        font-size: 1rem;
+    }
+    .card{
+        height: auto;
+    }
+    .home div div h1{
+        font-size: 2rem;
+    }
+    .home div div p{
+        font-size: 1rem; 
+    }
+    .home div div p span{
+        font-size: 1rem;
+    }
+    .details img{
+        height: 120px;
+    }
+    .details h1{
+        font-size: 3rem;
+    }
+    .details p{
+        font-size: 1.25rem;
+    }
+    .details li{
+        font-size: 1.25rem;
+    }
+    .details a{
+        font-size: 1.25rem;
+    }
+    .details a span{
+        font-size: 1.25rem;
+    }
+    .details thead tr th{
+        font-size: 0.75rem;
+    }
+    .details tbody tr td{
+        font-size: 0.75rem;
+    }
+    
 }
