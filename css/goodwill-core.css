@@ -97,6 +97,7 @@ nav p{
     image-resolution:300 dpi;
     object-fit: cover;
 }
+
 .details h1{
     font-weight: normal;
     font-size: 1.5rem;
@@ -119,10 +120,16 @@ nav p{
     text-decoration: none;
 }
 
+.details #report{
+    transition: all 0.3s;
+}
+.details #assessment{
+    transition: all 0.3s;
+}
+
 .details p{
     font-size: 0.875rem;
-    text-align: justify;
-    
+    text-align: justify; 
 }
 .details li{
     font-size: 0.75rem;
@@ -149,6 +156,61 @@ nav p{
     font-size: 0.75rem;
     padding: 5px;
 }
+.details div h2{
+    font-weight: normal;
+    font-size: 1.5rem;
+    vertical-align:middle;
+    text-align: center;
+    background:linear-gradient(to right,#005b7f, #7fdaff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.details div a{
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.details div p{
+    font-size: 1rem;
+    text-align: justify; 
+}
+
+#retake{
+    font-size: 0.75rem;
+    text-align: center; 
+}
+.details div label input{
+    height: 0.875rem;
+}
+.details div label{
+    font-size: 0.875rem;
+    color: black;
+}
+.details div button{
+    border: 0;
+    width: 6rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-decoration: none;
+    font-size: 0.875rem;
+    background-color:#7fdaff;
+    color:#005b7f;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 28px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    transition: all 0.3s ease;
+}
+.details button:hover{
+    background-color: #005b7f;
+    color: #7fdaff;
+}
 .card{
     width: 100%;
     display: flex;
@@ -165,7 +227,6 @@ nav p{
 .home div {
     padding: 5px;
 }
-
 .home div div{
     width: 50%;
     display: block;
@@ -184,7 +245,7 @@ nav p{
     font-size: 0.75rem;
 }
 .home div div p span{
-    text-decoration: none;
+    text-decoration: underline;
     color:#005b7f;
     font-size: 0.75rem;
     cursor: pointer;
@@ -206,8 +267,8 @@ nav p{
     z-index: 2;
     text-decoration: none;
     font-size: 0.875rem;
-    background-color: #005b7f;
-    color: #7fdaff;
+    background-color:#7fdaff;
+    color:#005b7f;
     padding: 10px;
     border-radius: 10px;
     line-height: 32px;
@@ -215,8 +276,8 @@ nav p{
     transition: all 0.3s ease;
 }
 .contact:hover{
-    background-color:#7fdaff;
-    color:#005b7f;
+    background-color: #005b7f;
+    color: #7fdaff;
 }
 footer{
     padding: 5px;
@@ -236,9 +297,6 @@ footer p{
     }
     nav p{
         font-size: 0.75rem;
-    }
-    .card{
-        height: 220px;
     }
     .home div div h1{
         font-size: 1.25rem;
@@ -336,7 +394,7 @@ footer p{
         font-size: 0.75rem;
     }
     .details img{
-        height: 120px;
+        height: 150px;
     }
     .details h1{
         font-size: 1.5rem;
@@ -382,7 +440,7 @@ footer p{
         font-size: 1rem;
     }
     .details img{
-        height: 120px;
+        height: 240px;
     }
     .details h1{
         font-size: 3rem;
@@ -428,7 +486,7 @@ footer p{
         font-size: 1rem;
     }
     .details img{
-        height: 120px;
+        height: 260px;
     }
     .details h1{
         font-size: 2rem;
@@ -474,7 +532,7 @@ footer p{
         font-size: 1rem;
     }
     .details img{
-        height: 120px;
+        height: 360px;
     }
     .details h1{
         font-size: 3rem;
@@ -519,7 +577,7 @@ footer p{
         font-size: 1rem;
     }
     .details img{
-        height: 120px;
+        height: 520px;
     }
     .details h1{
         font-size: 3rem;
