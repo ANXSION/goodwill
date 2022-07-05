@@ -9,10 +9,27 @@
 	<meta name="theme-color" content="white">
 	<meta name="msapplication-navbutton-color" content="white">
 	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="asset/image/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" href="css/goodwill-core.css" type="text/css">
 	<link rel="preload" href="css/goodwill-core.css" as="style">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<meta property="og:title" content="Goodwill Rehabilitation" />
+	<meta property="og:site_name" content="Goodwill Rehabilitation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="asset/image/logo.jpg" />
+	<meta property="og:url" content="https://goodwillrehabilitation.com" />
+	<meta property="og:description" content="The official website of Goodwill Rehabilitation, Siliguri." />
+	<meta name="twitter:card" content="summary" />
+
+	<script type="application/ld+json">
+		{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"url": "https://goodwillrehabilitation.com",
+		"logo": "https://goodwillrehabilitation.com/asset/image/logo.jpg"
+		}
+		</script>
 </head>
 
 <body>
@@ -54,6 +71,7 @@
 					<p>To Bring healing and restoration to those persons and their families who have been affected by Drug Addiction and Alcoholism and spread the message of hope, recovery and goodwill in our community.</p>
 					<p onclick="navigationclick('vision')"><span>This is our vision</span></p>
 				</div>
+
 				<div>
 					<img src="asset/image/ourvision.webp" alt="">
 				</div>
@@ -574,6 +592,12 @@
 	</footer>
 
 	<script>
+		window.addEventListener("load", () => {
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker.register("anxsion-goodwill-serviceworker.js");
+                }  
+            });
+
 		var navigationVar="";
 		document.getElementById("home").style.borderColor="rgba(0, 182, 255, 1)";
 		document.getElementById("home").style.color="rgba(0, 182, 255, 1)";

@@ -1,0 +1,28 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Goodwill Rehabilitation",
+    "short_name": "Goodwill",
+    "scope": "https://goodwillrehabilitation.com/",
+    "display": "standalone",
+    "start_url": "https://goodwillrehabilitation.com",
+    "background_color": "#FFFFFF",
+    "theme_color": "#00b6ff",
+    "description": "The official website of Goodwill Rehabilitation, Siliguri.",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+    {
+      "src": "asset/image/pwa/192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "asset/image/pwa/512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+    ]
+  }
