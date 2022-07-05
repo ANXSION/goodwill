@@ -59,7 +59,7 @@ nav{
     text-align: center;
     align-items: center;
     z-index: 2;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 nav p{
@@ -90,6 +90,16 @@ nav p{
     display: block;
     width: 100%;
     transition: all 0.3s ease;
+}
+
+.home hr{
+    text-align: center;
+    width: 60%;
+    color: black;
+    background-color: black;
+    opacity: 40%;
+    border: 0;
+    height: 1px;
 }
 .details img{
     width: 100%;
@@ -217,9 +227,9 @@ nav p{
     display: flex;
     border-radius: 5px;
     margin-bottom: 30px;
+    margin-top: 30px;
     position: relative;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: all 0.7s ease;
 }
 .card:hover{
@@ -247,7 +257,7 @@ nav p{
 }
 .home div div p span{
     text-decoration: underline;
-    color:#005b7f;
+    color:#00b6ff;
     font-size: 0.75rem;
     cursor: pointer;
 }
