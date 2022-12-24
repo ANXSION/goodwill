@@ -27,10 +27,7 @@ body{
     font-size: 3rem;
     vertical-align:middle;
     text-align: center;
-    background:linear-gradient(to right,#005b7f, #7fdaff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00b6ff;
 }
 
 .notfound p{
@@ -136,10 +133,7 @@ nav p{
     font-size: 1.5rem;
     vertical-align:middle;
     text-align: center;
-    background:linear-gradient(to right,#005b7f, #7fdaff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color:#00b6ff;
 }
 
 .details a span{
@@ -194,10 +188,7 @@ nav p{
     font-size: 1.5rem;
     vertical-align:middle;
     text-align: center;
-    background:linear-gradient(to right,#005b7f, #7fdaff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color:#00b6ff;
 }
 .details div a{
     font-size: 0.875rem;
@@ -213,7 +204,7 @@ nav p{
 }
 
 #retake{
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     text-align: center; 
     cursor: pointer;
 }
@@ -255,9 +246,6 @@ nav p{
     background-color: white;
     transition: all 0.7s ease;
 }
-.card:hover{
-    box-shadow: #7fdaff 0px 3px 18px;
-}
 .home div {
     padding: 5px;
 }
@@ -270,18 +258,15 @@ nav p{
     margin: 0;
     font-size: 1.5rem;
     font-weight: normal;
-    background: linear-gradient(to right,#005b7f, #7fdaff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00b6ff;
 }
 .home div div p{
-    font-size: 0.75rem;
+    font-size: 0.875rem;
 }
 .home div div p span{
     text-decoration: underline;
     color:#00b6ff;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     cursor: pointer;
 }
 .home div div img{
