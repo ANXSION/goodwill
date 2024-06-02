@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Fiona</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        @font-face {
+            font-family: MainFont;
+            src: url('../font/SFPro.otf');
+            font-display: swap;
+        }
+        body{
+            background-color: white;
+            color: black;
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr;
+            grid-template-rows: 90px 27px auto;
+            gap: 9px;
+            justify-content: center;
+            align-items: start;
+            font-size: 17px;
+            list-style: 22px;
+            margin: 0;
+            font-family: MainFont;
+        }
+        nav{
+            
+            box-sizing: content-box;
+        }
+        .userInputWrapper{
+            width: 100%; display: flex; justify-content: right; align-items:center;
+        }
+        .userInput{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            text-align: left;
+            background: rgb(208, 208, 208);
+            border-radius: 22px;
+            padding: 18px;
+            margin: 0;
+            width: fit-content;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            user-select: none;
+            font-size: 17px;
+            list-style: 22px;
+        }
+
+        p{
+            font-size: 17px;
+            list-style: 22px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: justify;
+            user-select: none;
+        }
+        span{
+            font-size: 17px;
+            list-style: 22px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: left;
+            user-select: none;
+        }
+        textarea{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            resize: none;
+            color: black;
+            overflow-y: hidden;
+            border: none;
+            outline: none;
+            font-family: MainFont;
+            font-size: 17px;
+            list-style: 22px;
+            padding: 9px;
+            box-sizing: border-box;
+            caret-color: black;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1/1;
+            border-radius: 22px;
+            margin: auto;
+            user-select: none;
+        }
+        
+        a{
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+</head>
+<body>
+    <nav style="height: 48px; display: flex; justify-content: space-between; align-items: center; padding-left: 3%; padding-right: 3%; gap: 12px; padding-top: 3%;">
+        <div style="height: 100%; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center;">
+            <img src="../../asset/image/favicon.png" alt="" style="width: 100%; height: 100%;">
+        </div>
+
+        <a href="../index.html">Home</a>
+    </nav>
+
+    <div style="width: 100%; height: 18px; display: flex; justify-content: center; align-items: center;">
+        <p style="font-size: 12px; font-family: MainFont;" id="version"></p>
+    </div>
+
+    <main style="position: relative; width: 100%; height: 100%;">
+        <div style="display: flex; flex-direction: column; min-height: 50vh; padding-bottom: 138px; box-sizing: border-box; padding-left: 10%; padding-right: 10%;" id="outputPanel">
+            <span>Hello! How can I helo you today?</span>
+
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 2fr 1fr;  justify-content: center; align-items: center; height: 120px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: white;">
+
+            <div style="display: grid; grid-template-columns: 1fr max-content; background-color:white; padding: 9px; box-sizing: border-box; width: 90%; border: 2px solid black; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
+                <textarea id="inputPanel" placeholder="Chat with Fiona" rows="2"></textarea>                
+                <button id="generate"><p class="material-symbols-outlined">send</p></button>
+            </div>
+            <p style="margin: 0; font-size: 0.75rem; padding: 0px; width: 100%; text-align: center;">Made by Anurag Lama</p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('version').innerText="Fiona v.0.1.2 (CBT+)";
+    </script>
+
+    <script type="module">
+        import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold} from "@google/generative-ai";
+    
+        const generationConfig = {
+            temperature: 1,
+            topP: 0.95,
+            topK: 64,
+            maxOutputTokens: 8192,
+            responseMimeType: "text/plain",
+        };
+
+        const safetySettings = [
+        {
+            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+            threshold: HarmBlockThreshold.BLOCK_NONE,
+        },
+        ];
+
+        const API_KEY = "AIzaSyCXhjEYe2B4msUGZ0Zo0GYC4qiIm-jNQy4";
+    
+        const genAI = new GoogleGenerativeAI(API_KEY);
+
+        const instructionSet = "Your name is Fiona. You are a helpful, nurse like assistant made for helping addicts in resolving their issue. You work for an organisation called 'Goodwill Rehabilitation' whose address is Salbari, Siliguri, Darjeeling. You were made by Anurag Lama. You are to be extremely polite and helpful. You are to answer question related to drug relabilitation, drugs, behavorial therapy, your details and the rehabilitation center details only. Any other unrelated prompts must be rejected politely. The contact details of the rehabilitation center is 9832909233.";
+
+
+        function instructionSetRaid(datapack) {
+            var hex = datapack.toString();
+            var datapack = '';
+            for (var n = 0; n < hex.length; n += 2) {
+                datapack += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+            }
+            return datapack;
+        }
+
+        const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash-latest",
+            systemInstruction: instructionSet,
+        });
+
+
+        document.getElementById('generate').addEventListener('click', async function() {
+
+            const prompt = document.getElementById('inputPanel').value;
+            document.getElementById('inputPanel').value = "";
+
+            document.getElementById('outputPanel').insertAdjacentHTML("beforeend", `
+            <div class="userInputWrapper">
+                <p class="userInput">`+prompt+`</p>
+            </div>
+            `);
+
+            let p = document.createElement('span');
+            document.getElementById('outputPanel').appendChild(p);
+
+            p.innerHTML="...";
+
+            document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+                try {
+                    const chatSession = model.startChat({
+                        history: [],
+                        generationConfig,
+                        safetySettings
+                    });
+
+                    const result = await chatSession.sendMessage(prompt);
+                    const response = await result.response;
+                    const text = response.text();
+
+                    p.innerHTML= text;
+                }
+                catch{
+                    p.innerHTML= "There seems to be an error.";
+                }
+                
+                p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        });
+    </script>
+</body>
+</html>
